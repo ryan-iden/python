@@ -1,6 +1,7 @@
 name: Publish iden Python SDK
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'iden-v*'
