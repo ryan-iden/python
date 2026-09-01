@@ -17,19 +17,23 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: pdm-project/setup-pdm@v4
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
 
       - name: Install dependencies
         run: |
-          pdm install
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install build
 
       - name: Check format
-        run: pdm run black iden samples --check
+        run: python -m black iden samples --check
 
       - name: Build
-        run: pdm build
+        run: python -m build
 
       - name: Run tests
-        run: pdm test
+        run: python -m pytest --cov --cov-report=term-missing

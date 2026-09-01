@@ -15,6 +15,18 @@ readme = "README.md"
 license = {text = "MIT"}
 keywords = ["iden", "auth", "user", "authentication", "authorization"]
 
+[project.optional-dependencies]
+dev = [
+    "flask[async]>=2.3.3",
+    "pytest>=7.4.4",
+    "pytest-cov>=4.1.0",
+    "python-dotenv>=1.0.1",
+    "black>=24.3.0",
+    "pytest-mock>=3.14.0",
+    "pytest-asyncio>=0.23.6",
+]
+docs = ["pydoc-markdown>=4.8.2"]
+
 [project.urls]
 homepage = "https://github.com/ryan-iden/python"
 repository = "https://github.com/ryan-iden/python"
@@ -56,21 +68,6 @@ distribution = true
 test = "pytest --cov --cov-report=term-missing"
 flask = "flask --app samples.flask --debug run"
 doc = "pydoc-markdown"
-
-[tool.pdm.dev-dependencies]
-dev = [
-    "flask[async]>=2.3.3",
-    "pytest>=7.4.4",
-    "pytest-cov>=4.1.0",
-    "python-dotenv>=1.0.1",
-    "black>=24.3.0",
-    "pytest-mock>=3.14.0",
-    "pytest-asyncio>=0.23.6",
-    "pydoc-markdown>=4.8.2",
-]
-
-[tool.pdm.resolution]
-excludes = ["black"] # pydoc-markdown requires black<24.0.0, but we need to upgrade it to >=24.3.0
 
 [tool.pdm.build]
 includes = []
