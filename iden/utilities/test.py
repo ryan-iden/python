@@ -1,7 +1,7 @@
 from typing import Any, Dict, Optional
 from pytest_mock import MockerFixture
 
-from logto.models.oidc import OidcProviderMetadata
+from iden.models.oidc import OidcProviderMetadata
 
 
 class MockResponse:

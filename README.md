@@ -1,22 +1,27 @@
-# Logto Python SDK
+# iden Python SDK
 
-[![Logto](https://img.shields.io/badge/for-logto-7958ff)][Website]
-[![Stable Version](https://img.shields.io/pypi/v/logto?label=stable)][PyPI Releases]
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/logto)][PyPI]
-[![PyPI - License](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Flogto-io%2Fpython%2Fmaster%2Fpyproject.toml)](https://github.com/logto-io/python)
+Current iden release: **0.0.1**. Install from `iden-sdk` on PyPI, imported as `iden`.
+
+> This project is derived from the corresponding [Logto SDK](https://github.com/logto-io). Protocol constants and established public API names such as `LogtoClient` are intentionally retained where changing them would break compatibility.
+
+
+[![iden](https://img.shields.io/badge/for-iden-5B5CF6)][Website]
+[![Stable Version](https://img.shields.io/pypi/v/iden-sdk?label=stable)][PyPI Releases]
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/iden-sdk)][PyPI]
+[![PyPI - License](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fryan-iden%2Fpython%2Fryan-wong-coder-personal%2Fpyproject.toml)](https://github.com/ryan-iden/python)
 [![Discord](https://img.shields.io/discord/965845662535147551?color=5865f2&logo=discord&label=discord)][Discord]
 
 ## Prerequisites
 
 - Python 3.8 or higher
-- A [Logto Cloud][Website] account or a self-hosted Logto
-- A Logto traditional web application created
+- An iden deployment
+- An iden traditional web application created
 
 If you don't have the Logto application created, please follow the [⚡ Get started](https://docs.logto.io/docs/tutorials/get-started/) guide to create one.
 
 ## Installation
 ```bash
-pip install logto # or `poetry add logto` or whatever you use
+pip install iden-sdk # or `poetry add iden-sdk` or whatever you use
 ```
 
 ## Tutorial
@@ -121,7 +126,7 @@ See the [flask.py](./samples/flask.py) file for more details.
 - [Logto documentation](https://docs.logto.io/)
 - [Join Discord][Discord]
 
-[Website]: https://logto.io/
-[PyPI]: https://pypi.org/project/logto/
-[PyPI Releases]: https://pypi.org/project/logto/#history
+[Website]: https://github.com/ryan-iden/iden
+[PyPI]: https://pypi.org/project/iden-sdk/
+[PyPI Releases]: https://pypi.org/project/iden-sdk/#history
 [Discord]: https://discord.gg/vRvwuwgpVX

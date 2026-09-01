@@ -1,5 +1,5 @@
 from flask import session
-from logto import LogtoClient, LogtoConfig, Storage, UserInfoScope
+from iden import LogtoClient, LogtoConfig, Storage, UserInfoScope
 from typing import Union
 from samples.config import LOGTO_APP_ID, LOGTO_APP_SECRET, LOGTO_ENDPOINT
 

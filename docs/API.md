@@ -1,48 +1,48 @@
 # Logto Python SDK API reference
 
 * [logto](#logto)
-* [logto.LogtoException](#logto.LogtoException)
-  * [LogtoException](#logto.LogtoException.LogtoException)
-* [logto.models.oidc](#logto.models.oidc)
-  * [OidcProviderMetadata](#logto.models.oidc.OidcProviderMetadata)
-  * [Scope](#logto.models.oidc.Scope)
-  * [UserInfoScope](#logto.models.oidc.UserInfoScope)
-  * [IdTokenClaims](#logto.models.oidc.IdTokenClaims)
-  * [ReservedResource](#logto.models.oidc.ReservedResource)
-  * [AccessTokenClaims](#logto.models.oidc.AccessTokenClaims)
-* [logto.models.response](#logto.models.response)
-  * [TokenResponse](#logto.models.response.TokenResponse)
-  * [UserIdentity](#logto.models.response.UserIdentity)
-  * [UserInfoResponse](#logto.models.response.UserInfoResponse)
-* [logto.LogtoClient](#logto.LogtoClient)
-  * [LogtoConfig](#logto.LogtoClient.LogtoConfig)
-  * [SignInSession](#logto.LogtoClient.SignInSession)
-  * [AccessToken](#logto.LogtoClient.AccessToken)
-  * [AccessTokenMap](#logto.LogtoClient.AccessTokenMap)
-  * [InteractionMode](#logto.LogtoClient.InteractionMode)
-  * [LogtoClient](#logto.LogtoClient.LogtoClient)
-* [logto.OidcCore](#logto.OidcCore)
-  * [OidcCore](#logto.OidcCore.OidcCore)
-* [logto.utilities](#logto.utilities)
-  * [urlsafeEncode](#logto.utilities.urlsafeEncode)
-  * [removeFalsyKeys](#logto.utilities.removeFalsyKeys)
-  * [OrganizationUrnPrefix](#logto.utilities.OrganizationUrnPrefix)
-  * [buildOrganizationUrn](#logto.utilities.buildOrganizationUrn)
-* [logto.utilities.test](#logto.utilities.test)
-* [logto.Storage](#logto.Storage)
-  * [PersistKey](#logto.Storage.PersistKey)
-  * [Storage](#logto.Storage.Storage)
-  * [MemoryStorage](#logto.Storage.MemoryStorage)
+* [logto.LogtoException](#iden.LogtoException)
+  * [LogtoException](#iden.LogtoException.LogtoException)
+* [logto.models.oidc](#iden.models.oidc)
+  * [OidcProviderMetadata](#iden.models.oidc.OidcProviderMetadata)
+  * [Scope](#iden.models.oidc.Scope)
+  * [UserInfoScope](#iden.models.oidc.UserInfoScope)
+  * [IdTokenClaims](#iden.models.oidc.IdTokenClaims)
+  * [ReservedResource](#iden.models.oidc.ReservedResource)
+  * [AccessTokenClaims](#iden.models.oidc.AccessTokenClaims)
+* [logto.models.response](#iden.models.response)
+  * [TokenResponse](#iden.models.response.TokenResponse)
+  * [UserIdentity](#iden.models.response.UserIdentity)
+  * [UserInfoResponse](#iden.models.response.UserInfoResponse)
+* [logto.LogtoClient](#iden.LogtoClient)
+  * [LogtoConfig](#iden.LogtoClient.LogtoConfig)
+  * [SignInSession](#iden.LogtoClient.SignInSession)
+  * [AccessToken](#iden.LogtoClient.AccessToken)
+  * [AccessTokenMap](#iden.LogtoClient.AccessTokenMap)
+  * [InteractionMode](#iden.LogtoClient.InteractionMode)
+  * [LogtoClient](#iden.LogtoClient.LogtoClient)
+* [iden.OidcCore](#iden.OidcCore)
+  * [OidcCore](#iden.OidcCore.OidcCore)
+* [logto.utilities](#iden.utilities)
+  * [urlsafeEncode](#iden.utilities.urlsafeEncode)
+  * [removeFalsyKeys](#iden.utilities.removeFalsyKeys)
+  * [OrganizationUrnPrefix](#iden.utilities.OrganizationUrnPrefix)
+  * [buildOrganizationUrn](#iden.utilities.buildOrganizationUrn)
+* [logto.utilities.test](#iden.utilities.test)
+* [logto.Storage](#iden.Storage)
+  * [PersistKey](#iden.Storage.PersistKey)
+  * [Storage](#iden.Storage.Storage)
+  * [MemoryStorage](#iden.Storage.MemoryStorage)
 
 <a id="logto"></a>
 
 # logto
 
-<a id="logto.LogtoException"></a>
+<a id="iden.LogtoException"></a>
 
 # logto.LogtoException
 
-<a id="logto.LogtoException.LogtoException"></a>
+<a id="iden.LogtoException.LogtoException"></a>
 
 ## LogtoException
 
@@ -52,11 +52,11 @@ class LogtoException(Exception)
 
 The exception class to identify the exceptions from the Logto client.
 
-<a id="logto.models.oidc"></a>
+<a id="iden.models.oidc"></a>
 
 # logto.models.oidc
 
-<a id="logto.models.oidc.OidcProviderMetadata"></a>
+<a id="iden.models.oidc.OidcProviderMetadata"></a>
 
 ## OidcProviderMetadata
 
@@ -68,13 +68,13 @@ The OpenID Connect Discovery response object.
 
 See https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata
 
-<a id="logto.models.oidc.OidcProviderMetadata.userinfo_endpoint"></a>
+<a id="iden.models.oidc.OidcProviderMetadata.userinfo_endpoint"></a>
 
 #### userinfo\_endpoint
 
 This is actually "RECOMMENDED" but Logto requires it
 
-<a id="logto.models.oidc.Scope"></a>
+<a id="iden.models.oidc.Scope"></a>
 
 ## Scope
 
@@ -84,7 +84,7 @@ class Scope(Enum)
 
 The scope base class for determining the scope type.
 
-<a id="logto.models.oidc.UserInfoScope"></a>
+<a id="iden.models.oidc.UserInfoScope"></a>
 
 ## UserInfoScope
 
@@ -94,31 +94,31 @@ class UserInfoScope(Scope)
 
 The available scopes for the userinfo endpoint and the ID token claims.
 
-<a id="logto.models.oidc.UserInfoScope.openid"></a>
+<a id="iden.models.oidc.UserInfoScope.openid"></a>
 
 #### openid
 
 The reserved scope for OpenID Connect. It maps to the `sub` claim.
 
-<a id="logto.models.oidc.UserInfoScope.profile"></a>
+<a id="iden.models.oidc.UserInfoScope.profile"></a>
 
 #### profile
 
 The scope for the basic profile. It maps to the `name`, `username`, `picture` claims.
 
-<a id="logto.models.oidc.UserInfoScope.email"></a>
+<a id="iden.models.oidc.UserInfoScope.email"></a>
 
 #### email
 
 The scope for the email address. It maps to the `email`, `email_verified` claims.
 
-<a id="logto.models.oidc.UserInfoScope.phone"></a>
+<a id="iden.models.oidc.UserInfoScope.phone"></a>
 
 #### phone
 
 The scope for the phone number. It maps to the `phone_number`, `phone_number_verified` claims.
 
-<a id="logto.models.oidc.UserInfoScope.customData"></a>
+<a id="iden.models.oidc.UserInfoScope.customData"></a>
 
 #### custom\_data
 
@@ -127,7 +127,7 @@ The scope for the custom data. It maps to the `custom_data` claim.
 Note that the custom data is not included in the ID token by default. You need to
 use `fetchUserInfo()` to get the custom data.
 
-<a id="logto.models.oidc.UserInfoScope.identities"></a>
+<a id="iden.models.oidc.UserInfoScope.identities"></a>
 
 #### identities
 
@@ -136,7 +136,7 @@ The scope for the identities. It maps to the `identities` claim.
 Note that the identities are not included in the ID token by default. You need to
 use `fetchUserInfo()` to get the identities.
 
-<a id="logto.models.oidc.UserInfoScope.organizations"></a>
+<a id="iden.models.oidc.UserInfoScope.organizations"></a>
 
 #### organizations
 
@@ -144,7 +144,7 @@ Scope for user's organization IDs and perform organization token grant per [RFC 
 
 To learn more about Logto Organizations, see https://docs.logto.io/docs/recipes/organizations/.
 
-<a id="logto.models.oidc.UserInfoScope.organization_roles"></a>
+<a id="iden.models.oidc.UserInfoScope.organization_roles"></a>
 
 #### organization\_roles
 
@@ -152,7 +152,7 @@ Scope for user's organization roles per [RFC 0001](https://github.com/logto-io/r
 
 To learn more about Logto Organizations, see https://docs.logto.io/docs/recipes/organizations/.
 
-<a id="logto.models.oidc.IdTokenClaims"></a>
+<a id="iden.models.oidc.IdTokenClaims"></a>
 
 ## IdTokenClaims
 
@@ -165,92 +165,92 @@ The ID token claims object.
 To access the extra claims, use `__pydantic_extra__`. See
 https://docs.pydantic.dev/latest/usage/models/#extra-fields for more information.
 
-<a id="logto.models.oidc.IdTokenClaims.iss"></a>
+<a id="iden.models.oidc.IdTokenClaims.iss"></a>
 
 #### iss
 
 The issuer identifier for whom issued the token.
 
-<a id="logto.models.oidc.IdTokenClaims.sub"></a>
+<a id="iden.models.oidc.IdTokenClaims.sub"></a>
 
 #### sub
 
 The subject identifier for whom the token is intended (user ID).
 
-<a id="logto.models.oidc.IdTokenClaims.aud"></a>
+<a id="iden.models.oidc.IdTokenClaims.aud"></a>
 
 #### aud
 
 The audience that the token is intended for, which is the client ID.
 
-<a id="logto.models.oidc.IdTokenClaims.exp"></a>
+<a id="iden.models.oidc.IdTokenClaims.exp"></a>
 
 #### exp
 
 The expiration time of the token (in seconds).
 
-<a id="logto.models.oidc.IdTokenClaims.iat"></a>
+<a id="iden.models.oidc.IdTokenClaims.iat"></a>
 
 #### iat
 
 The time at which the token was issued (in seconds).
 
-<a id="logto.models.oidc.IdTokenClaims.name"></a>
+<a id="iden.models.oidc.IdTokenClaims.name"></a>
 
 #### name
 
 The user's full name.
 
-<a id="logto.models.oidc.IdTokenClaims.username"></a>
+<a id="iden.models.oidc.IdTokenClaims.username"></a>
 
 #### username
 
 The user's username.
 
-<a id="logto.models.oidc.IdTokenClaims.picture"></a>
+<a id="iden.models.oidc.IdTokenClaims.picture"></a>
 
 #### picture
 
 The user's profile picture URL.
 
-<a id="logto.models.oidc.IdTokenClaims.email"></a>
+<a id="iden.models.oidc.IdTokenClaims.email"></a>
 
 #### email
 
 The user's email address.
 
-<a id="logto.models.oidc.IdTokenClaims.email_verified"></a>
+<a id="iden.models.oidc.IdTokenClaims.email_verified"></a>
 
 #### email\_verified
 
 Whether the user's email address is verified.
 
-<a id="logto.models.oidc.IdTokenClaims.phone_number"></a>
+<a id="iden.models.oidc.IdTokenClaims.phone_number"></a>
 
 #### phone\_number
 
 The user's phone number.
 
-<a id="logto.models.oidc.IdTokenClaims.phone_number_verified"></a>
+<a id="iden.models.oidc.IdTokenClaims.phone_number_verified"></a>
 
 #### phone\_number\_verified
 
 Whether the user's phone number is verified.
 
-<a id="logto.models.oidc.IdTokenClaims.organizations"></a>
+<a id="iden.models.oidc.IdTokenClaims.organizations"></a>
 
 #### organizations
 
 The organization IDs that the user has membership.
 
-<a id="logto.models.oidc.IdTokenClaims.organization_roles"></a>
+<a id="iden.models.oidc.IdTokenClaims.organization_roles"></a>
 
 #### organization\_roles
 
 The organization roles that the user has.
 Each role is in the format of `<organization_id>:<role_name>`.
 
-<a id="logto.models.oidc.ReservedResource"></a>
+<a id="iden.models.oidc.ReservedResource"></a>
 
 ## ReservedResource
 
@@ -260,13 +260,13 @@ class ReservedResource(Enum)
 
 Resources that reserved by Logto, which cannot be defined by users.
 
-<a id="logto.models.oidc.ReservedResource.organizations"></a>
+<a id="iden.models.oidc.ReservedResource.organizations"></a>
 
 #### organizations
 
 The resource for organization template per [RFC 0001](https://github.com/logto-io/rfcs).
 
-<a id="logto.models.oidc.AccessTokenClaims"></a>
+<a id="iden.models.oidc.AccessTokenClaims"></a>
 
 ## AccessTokenClaims
 
@@ -279,19 +279,19 @@ The access token claims object.
 To access the extra claims, use `__pydantic_extra__`. See
 https://docs.pydantic.dev/latest/usage/models/#extra-fields for more information.
 
-<a id="logto.models.oidc.AccessTokenClaims.iss"></a>
+<a id="iden.models.oidc.AccessTokenClaims.iss"></a>
 
 #### iss
 
 The issuer identifier for whom issued the token.
 
-<a id="logto.models.oidc.AccessTokenClaims.sub"></a>
+<a id="iden.models.oidc.AccessTokenClaims.sub"></a>
 
 #### sub
 
 The subject identifier for whom the token is intended (user ID).
 
-<a id="logto.models.oidc.AccessTokenClaims.aud"></a>
+<a id="iden.models.oidc.AccessTokenClaims.aud"></a>
 
 #### aud
 
@@ -300,36 +300,36 @@ The audience that the token is intended for, which may be one of the following:
 - Resource indicator
 - Logto organization URN (`urn:logto:organization:<organization_id>`)
 
-<a id="logto.models.oidc.AccessTokenClaims.exp"></a>
+<a id="iden.models.oidc.AccessTokenClaims.exp"></a>
 
 #### exp
 
 The expiration time of the token (in seconds).
 
-<a id="logto.models.oidc.AccessTokenClaims.iat"></a>
+<a id="iden.models.oidc.AccessTokenClaims.iat"></a>
 
 #### iat
 
 The time at which the token was issued (in seconds).
 
-<a id="logto.models.oidc.AccessTokenClaims.scope"></a>
+<a id="iden.models.oidc.AccessTokenClaims.scope"></a>
 
 #### scope
 
 The scopes that the token is granted for.
 
-<a id="logto.models.oidc.AccessTokenClaims.client_id"></a>
+<a id="iden.models.oidc.AccessTokenClaims.client_id"></a>
 
 #### client\_id
 
 The client ID that the token is granted for. Useful when the client ID is not
 included in the `aud` claim.
 
-<a id="logto.models.response"></a>
+<a id="iden.models.response"></a>
 
 # logto.models.response
 
-<a id="logto.models.response.TokenResponse"></a>
+<a id="iden.models.response.TokenResponse"></a>
 
 ## TokenResponse
 
@@ -339,37 +339,37 @@ class TokenResponse(BaseModel)
 
 The response model from the token endpoint.
 
-<a id="logto.models.response.TokenResponse.access_token"></a>
+<a id="iden.models.response.TokenResponse.access_token"></a>
 
 #### access\_token
 
 The access token string.
 
-<a id="logto.models.response.TokenResponse.token_type"></a>
+<a id="iden.models.response.TokenResponse.token_type"></a>
 
 #### token\_type
 
 The token type string, should be "Bearer".
 
-<a id="logto.models.response.TokenResponse.expires_in"></a>
+<a id="iden.models.response.TokenResponse.expires_in"></a>
 
 #### expires\_in
 
 The expiration time of the access token (in seconds).
 
-<a id="logto.models.response.TokenResponse.refresh_token"></a>
+<a id="iden.models.response.TokenResponse.refresh_token"></a>
 
 #### refresh\_token
 
 The refresh token string.
 
-<a id="logto.models.response.TokenResponse.id_token"></a>
+<a id="iden.models.response.TokenResponse.id_token"></a>
 
 #### id\_token
 
 The ID token string.
 
-<a id="logto.models.response.UserIdentity"></a>
+<a id="iden.models.response.UserIdentity"></a>
 
 ## UserIdentity
 
@@ -379,19 +379,19 @@ class UserIdentity(BaseModel)
 
 The user identity model.
 
-<a id="logto.models.response.UserIdentity.userId"></a>
+<a id="iden.models.response.UserIdentity.userId"></a>
 
 #### userId
 
 The user ID of the target identity.
 
-<a id="logto.models.response.UserIdentity.details"></a>
+<a id="iden.models.response.UserIdentity.details"></a>
 
 #### details
 
 The details of the target identity, can be any JSON object.
 
-<a id="logto.models.response.UserInfoResponse"></a>
+<a id="iden.models.response.UserInfoResponse"></a>
 
 ## UserInfoResponse
 
@@ -401,87 +401,87 @@ class UserInfoResponse(BaseModel)
 
 The response model from the user info endpoint.
 
-<a id="logto.models.response.UserInfoResponse.sub"></a>
+<a id="iden.models.response.UserInfoResponse.sub"></a>
 
 #### sub
 
 The subject identifier for whom the token is intended (user ID).
 
-<a id="logto.models.response.UserInfoResponse.name"></a>
+<a id="iden.models.response.UserInfoResponse.name"></a>
 
 #### name
 
 The full name of the user.
 
-<a id="logto.models.response.UserInfoResponse.username"></a>
+<a id="iden.models.response.UserInfoResponse.username"></a>
 
 #### username
 
 The username of the user.
 
-<a id="logto.models.response.UserInfoResponse.picture"></a>
+<a id="iden.models.response.UserInfoResponse.picture"></a>
 
 #### picture
 
 The profile picture URL of the user.
 
-<a id="logto.models.response.UserInfoResponse.email"></a>
+<a id="iden.models.response.UserInfoResponse.email"></a>
 
 #### email
 
 The email address of the user.
 
-<a id="logto.models.response.UserInfoResponse.email_verified"></a>
+<a id="iden.models.response.UserInfoResponse.email_verified"></a>
 
 #### email\_verified
 
 Whether the email address is verified.
 
-<a id="logto.models.response.UserInfoResponse.phone_number"></a>
+<a id="iden.models.response.UserInfoResponse.phone_number"></a>
 
 #### phone\_number
 
 The phone number of the user.
 
-<a id="logto.models.response.UserInfoResponse.phone_number_verified"></a>
+<a id="iden.models.response.UserInfoResponse.phone_number_verified"></a>
 
 #### phone\_number\_verified
 
 Whether the phone number is verified.
 
-<a id="logto.models.response.UserInfoResponse.custom_data"></a>
+<a id="iden.models.response.UserInfoResponse.custom_data"></a>
 
 #### custom\_data
 
 The custom data of the user, can be any JSON object.
 
-<a id="logto.models.response.UserInfoResponse.identities"></a>
+<a id="iden.models.response.UserInfoResponse.identities"></a>
 
 #### identities
 
 The identities of the user, can be a dictionary of key-value pairs, where the key is
 the identity type and the value is the `UserIdentity` object.
 
-<a id="logto.models.response.UserInfoResponse.organizations"></a>
+<a id="iden.models.response.UserInfoResponse.organizations"></a>
 
 #### organizations
 
 The organization IDs that the user has membership.
 
-<a id="logto.models.response.UserInfoResponse.organization_roles"></a>
+<a id="iden.models.response.UserInfoResponse.organization_roles"></a>
 
 #### organization\_roles
 
 The organization roles that the user has.
 Each role is in the format of `<organization_id>:<role_name>`.
 
-<a id="logto.LogtoClient"></a>
+<a id="iden.LogtoClient"></a>
 
 # logto.LogtoClient
 
 The Logto client class and the related models.
 
-<a id="logto.LogtoClient.LogtoConfig"></a>
+<a id="iden.LogtoClient.LogtoConfig"></a>
 
 ## LogtoConfig
 
@@ -491,7 +491,7 @@ class LogtoConfig(BaseModel)
 
 The configuration object for the Logto client.
 
-<a id="logto.LogtoClient.LogtoConfig.endpoint"></a>
+<a id="iden.LogtoClient.LogtoConfig.endpoint"></a>
 
 #### endpoint
 
@@ -501,21 +501,21 @@ or the team settings page of the Logto Console.
 Example:
 https://foo.logto.app
 
-<a id="logto.LogtoClient.LogtoConfig.appId"></a>
+<a id="iden.LogtoClient.LogtoConfig.appId"></a>
 
 #### appId
 
 The client ID of your application, you can get it from the integration guide
 or the application details page of the Logto Console.
 
-<a id="logto.LogtoClient.LogtoConfig.appSecret"></a>
+<a id="iden.LogtoClient.LogtoConfig.appSecret"></a>
 
 #### appSecret
 
 The client secret of your application, you can get it from the integration guide
 or the application details page of the Logto Console.
 
-<a id="logto.LogtoClient.LogtoConfig.prompt"></a>
+<a id="iden.LogtoClient.LogtoConfig.prompt"></a>
 
 #### prompt
 
@@ -526,7 +526,7 @@ without being prompted for sign-in again.
 - If the value is `login`, the user will be prompted for sign-in again anyway. Note
 there will be no Refresh Token returned in this case.
 
-<a id="logto.LogtoClient.LogtoConfig.resources"></a>
+<a id="iden.LogtoClient.LogtoConfig.resources"></a>
 
 #### resources
 
@@ -536,7 +536,7 @@ resources by providing an array of strings.
 See https://docs.logto.io/docs/recipes/rbac/ to learn more about how to use role-based
 access control (RBAC) to protect API resources.
 
-<a id="logto.LogtoClient.LogtoConfig.scopes"></a>
+<a id="iden.LogtoClient.LogtoConfig.scopes"></a>
 
 #### scopes
 
@@ -548,7 +548,7 @@ If resources are specified, scopes will be applied to every resource.
 See https://docs.logto.io/docs/recipes/integrate-logto/vanilla-js/#fetch-user-information
 for more information of available scopes for user information.
 
-<a id="logto.LogtoClient.SignInSession"></a>
+<a id="iden.LogtoClient.SignInSession"></a>
 
 ## SignInSession
 
@@ -559,25 +559,25 @@ class SignInSession(BaseModel)
 The sign-in session that stores the information for the sign-in callback.
 Should be stored before redirecting the user to Logto.
 
-<a id="logto.LogtoClient.SignInSession.redirectUri"></a>
+<a id="iden.LogtoClient.SignInSession.redirectUri"></a>
 
 #### redirectUri
 
 The redirect URI for the current sign-in session.
 
-<a id="logto.LogtoClient.SignInSession.codeVerifier"></a>
+<a id="iden.LogtoClient.SignInSession.codeVerifier"></a>
 
 #### codeVerifier
 
 The code verifier of Proof Key for Code Exchange (PKCE).
 
-<a id="logto.LogtoClient.SignInSession.state"></a>
+<a id="iden.LogtoClient.SignInSession.state"></a>
 
 #### state
 
 The state for OAuth 2.0 authorization request.
 
-<a id="logto.LogtoClient.AccessToken"></a>
+<a id="iden.LogtoClient.AccessToken"></a>
 
 ## AccessToken
 
@@ -587,13 +587,13 @@ class AccessToken(BaseModel)
 
 The access token class for a resource.
 
-<a id="logto.LogtoClient.AccessToken.token"></a>
+<a id="iden.LogtoClient.AccessToken.token"></a>
 
 #### token
 
 The access token string.
 
-<a id="logto.LogtoClient.AccessToken.expiresAt"></a>
+<a id="iden.LogtoClient.AccessToken.expiresAt"></a>
 
 #### expiresAt
 
@@ -601,7 +601,7 @@ The timestamp (in seconds) when the access token will expire.
 Note this is not the expiration time of the access token itself, but the
 expiration time of the access token cache.
 
-<a id="logto.LogtoClient.AccessTokenMap"></a>
+<a id="iden.LogtoClient.AccessTokenMap"></a>
 
 ## AccessTokenMap
 
@@ -614,14 +614,14 @@ The access token map that maps the resource to the access token for that resourc
 If resource is an empty string, it means the access token is for UserInfo endpoint
 or the default resource.
 
-<a id="logto.LogtoClient.InteractionMode"></a>
+<a id="iden.LogtoClient.InteractionMode"></a>
 
 #### InteractionMode
 
 The interaction mode for the sign-in request. Note this is not a part of the OIDC
 specification, but a Logto extension.
 
-<a id="logto.LogtoClient.LogtoClient"></a>
+<a id="iden.LogtoClient.LogtoClient"></a>
 
 ## LogtoClient
 
@@ -632,7 +632,7 @@ class LogtoClient()
 The main class of the Logto client. You should create an instance of this class
 and use it to sign in, sign out, get access token, etc.
 
-<a id="logto.LogtoClient.LogtoClient.getOidcCore"></a>
+<a id="iden.LogtoClient.LogtoClient.getOidcCore"></a>
 
 #### getOidcCore
 
@@ -643,7 +643,7 @@ async def getOidcCore() -> OidcCore
 Get the OIDC core object. You can use it to get the provider metadata, verify
 the ID token, fetch tokens by code or refresh token, etc.
 
-<a id="logto.LogtoClient.LogtoClient.signIn"></a>
+<a id="iden.LogtoClient.LogtoClient.signIn"></a>
 
 #### signIn
 
@@ -664,7 +664,7 @@ Example:
   return redirect(await client.signIn('https://example.com/callback'))
   ```
 
-<a id="logto.LogtoClient.LogtoClient.signOut"></a>
+<a id="iden.LogtoClient.LogtoClient.signOut"></a>
 
 #### signOut
 
@@ -688,7 +688,7 @@ Example:
   return redirect(await client.signOut('https://example.com'))
   ```
 
-<a id="logto.LogtoClient.LogtoClient.handleSignInCallback"></a>
+<a id="iden.LogtoClient.LogtoClient.handleSignInCallback"></a>
 
 #### handleSignInCallback
 
@@ -699,7 +699,7 @@ async def handleSignInCallback(callbackUri: str) -> None
 Handle the sign-in callback from the Logto server. This method should be called
 in the callback route handler of your application.
 
-<a id="logto.LogtoClient.LogtoClient.getAccessToken"></a>
+<a id="iden.LogtoClient.LogtoClient.getAccessToken"></a>
 
 #### getAccessToken
 
@@ -711,7 +711,7 @@ Get the access token for the given resource. If the access token is expired,
 it will be refreshed automatically. If no refresh token is found, None will
 be returned.
 
-<a id="logto.LogtoClient.LogtoClient.getOrganizationToken"></a>
+<a id="iden.LogtoClient.LogtoClient.getOrganizationToken"></a>
 
 #### getOrganizationToken
 
@@ -723,7 +723,7 @@ Get the access token for the given organization ID. If the access token is expir
 it will be refreshed automatically. If no refresh token is found, None will
 be returned.
 
-<a id="logto.LogtoClient.LogtoClient.getAccessTokenClaims"></a>
+<a id="iden.LogtoClient.LogtoClient.getAccessTokenClaims"></a>
 
 #### getAccessTokenClaims
 
@@ -735,7 +735,7 @@ Get the claims in the access token for the given resource. If the access token
 is expired, it will be refreshed automatically. If it's unable to refresh the
 access token, an exception will be thrown.
 
-<a id="logto.LogtoClient.LogtoClient.getOrganizationTokenClaims"></a>
+<a id="iden.LogtoClient.LogtoClient.getOrganizationTokenClaims"></a>
 
 #### getOrganizationTokenClaims
 
@@ -747,7 +747,7 @@ Get the claims in the access token for the given organization ID. If the access 
 is expired, it will be refreshed automatically. If it's unable to refresh the
 access token, an exception will be thrown.
 
-<a id="logto.LogtoClient.LogtoClient.getIdToken"></a>
+<a id="iden.LogtoClient.LogtoClient.getIdToken"></a>
 
 #### getIdToken
 
@@ -758,7 +758,7 @@ def getIdToken() -> Optional[str]
 Get the ID Token string. If you need to get the claims in the ID Token, use
 `getIdTokenClaims` instead.
 
-<a id="logto.LogtoClient.LogtoClient.getIdTokenClaims"></a>
+<a id="iden.LogtoClient.LogtoClient.getIdTokenClaims"></a>
 
 #### getIdTokenClaims
 
@@ -769,7 +769,7 @@ def getIdTokenClaims() -> IdTokenClaims
 Get the claims in the ID Token. If the ID Token does not exist, an exception
 will be thrown.
 
-<a id="logto.LogtoClient.LogtoClient.getRefreshToken"></a>
+<a id="iden.LogtoClient.LogtoClient.getRefreshToken"></a>
 
 #### getRefreshToken
 
@@ -779,7 +779,7 @@ def getRefreshToken() -> Optional[str]
 
 Get the refresh token string.
 
-<a id="logto.LogtoClient.LogtoClient.isAuthenticated"></a>
+<a id="iden.LogtoClient.LogtoClient.isAuthenticated"></a>
 
 #### isAuthenticated
 
@@ -789,7 +789,7 @@ def isAuthenticated() -> bool
 
 Check if the user is authenticated by checking if the ID Token exists.
 
-<a id="logto.LogtoClient.LogtoClient.fetchUserInfo"></a>
+<a id="iden.LogtoClient.LogtoClient.fetchUserInfo"></a>
 
 #### fetchUserInfo
 
@@ -800,15 +800,15 @@ async def fetchUserInfo() -> UserInfoResponse
 Fetch the user information from the UserInfo endpoint. If the access token
 is expired, it will be refreshed automatically.
 
-<a id="logto.OidcCore"></a>
+<a id="iden.OidcCore"></a>
 
-# logto.OidcCore
+# iden.OidcCore
 
 The core OIDC functions for the Logto client. Provider-agonistic functions
 are implemented as static methods, while other functions are implemented as
 instance methods.
 
-<a id="logto.OidcCore.OidcCore"></a>
+<a id="iden.OidcCore.OidcCore"></a>
 
 ## OidcCore
 
@@ -816,7 +816,7 @@ instance methods.
 class OidcCore()
 ```
 
-<a id="logto.OidcCore.OidcCore.__init__"></a>
+<a id="iden.OidcCore.OidcCore.__init__"></a>
 
 #### \_\_init\_\_
 
@@ -828,7 +828,7 @@ Initialize the OIDC core with the provider metadata. You can use the
 `getProviderMetadata` method to fetch the provider metadata from the
 discovery URL.
 
-<a id="logto.OidcCore.OidcCore.generateState"></a>
+<a id="iden.OidcCore.OidcCore.generateState"></a>
 
 #### generateState
 
@@ -838,7 +838,7 @@ def generateState() -> str
 
 Generate a random string (32 bytes) for the state parameter.
 
-<a id="logto.OidcCore.OidcCore.generateCodeVerifier"></a>
+<a id="iden.OidcCore.OidcCore.generateCodeVerifier"></a>
 
 #### generateCodeVerifier
 
@@ -850,7 +850,7 @@ Generate a random code verifier string (32 bytes) for PKCE.
 
 See: https://www.rfc-editor.org/rfc/rfc7636.html#section-4.1
 
-<a id="logto.OidcCore.OidcCore.generateCodeChallenge"></a>
+<a id="iden.OidcCore.OidcCore.generateCodeChallenge"></a>
 
 #### generateCodeChallenge
 
@@ -862,7 +862,7 @@ Generate a code challenge string for the given code verifier string.
 
 See: https://www.rfc-editor.org/rfc/rfc7636.html#section-4.2
 
-<a id="logto.OidcCore.OidcCore.decodeIdToken"></a>
+<a id="iden.OidcCore.OidcCore.decodeIdToken"></a>
 
 #### decodeIdToken
 
@@ -872,7 +872,7 @@ def decodeIdToken(idToken: str) -> IdTokenClaims
 
 Decode the ID Token and return the claims without verifying the signature.
 
-<a id="logto.OidcCore.OidcCore.decodeAccessToken"></a>
+<a id="iden.OidcCore.OidcCore.decodeAccessToken"></a>
 
 #### decodeAccessToken
 
@@ -882,7 +882,7 @@ def decodeAccessToken(accessToken: str) -> AccessTokenClaims
 
 Decode the access token and return the claims without verifying the signature.
 
-<a id="logto.OidcCore.OidcCore.getProviderMetadata"></a>
+<a id="iden.OidcCore.OidcCore.getProviderMetadata"></a>
 
 #### getProviderMetadata
 
@@ -892,7 +892,7 @@ async def getProviderMetadata(discoveryUrl: str) -> OidcProviderMetadata
 
 Fetch the provider metadata from the discovery URL.
 
-<a id="logto.OidcCore.OidcCore.fetchTokenByCode"></a>
+<a id="iden.OidcCore.OidcCore.fetchTokenByCode"></a>
 
 #### fetchTokenByCode
 
@@ -904,7 +904,7 @@ async def fetchTokenByCode(clientId: str, clientSecret: Optional[str],
 
 Fetch the token from the token endpoint using the authorization code.
 
-<a id="logto.OidcCore.OidcCore.fetchTokenByRefreshToken"></a>
+<a id="iden.OidcCore.OidcCore.fetchTokenByRefreshToken"></a>
 
 #### fetchTokenByRefreshToken
 
@@ -920,7 +920,7 @@ Fetch the token from the token endpoint using the refresh token.
 If the resource is an organization URN, the organization ID will be extracted
 and used as the `organization_id` parameter.
 
-<a id="logto.OidcCore.OidcCore.verifyIdToken"></a>
+<a id="iden.OidcCore.OidcCore.verifyIdToken"></a>
 
 #### verifyIdToken
 
@@ -931,7 +931,7 @@ def verifyIdToken(idToken: str, clientId: str) -> None
 Verify the ID Token signature and its issuer and client ID, throw an exception
 if the verification fails.
 
-<a id="logto.OidcCore.OidcCore.fetchUserInfo"></a>
+<a id="iden.OidcCore.OidcCore.fetchUserInfo"></a>
 
 #### fetchUserInfo
 
@@ -943,11 +943,11 @@ Fetch the user info from the OpenID Connect UserInfo endpoint.
 
 See: https://openid.net/specs/openid-connect-core-1_0.html#UserInfo
 
-<a id="logto.utilities"></a>
+<a id="iden.utilities"></a>
 
 # logto.utilities
 
-<a id="logto.utilities.urlsafeEncode"></a>
+<a id="iden.utilities.urlsafeEncode"></a>
 
 #### urlsafeEncode
 
@@ -957,7 +957,7 @@ def urlsafeEncode(data: bytes) -> str
 
 Encode the given bytes to a URL-safe string.
 
-<a id="logto.utilities.removeFalsyKeys"></a>
+<a id="iden.utilities.removeFalsyKeys"></a>
 
 #### removeFalsyKeys
 
@@ -967,13 +967,13 @@ def removeFalsyKeys(data: Dict[str, Any]) -> Dict[str, Any]
 
 Remove keys with falsy values from the given dictionary.
 
-<a id="logto.utilities.OrganizationUrnPrefix"></a>
+<a id="iden.utilities.OrganizationUrnPrefix"></a>
 
 #### OrganizationUrnPrefix
 
 The prefix for Logto organization URNs.
 
-<a id="logto.utilities.buildOrganizationUrn"></a>
+<a id="iden.utilities.buildOrganizationUrn"></a>
 
 #### buildOrganizationUrn
 
@@ -988,23 +988,23 @@ Example:
 buildOrganizationUrn("1") # returns "urn:logto:organization:1"
 ```
 
-<a id="logto.utilities.test"></a>
+<a id="iden.utilities.test"></a>
 
 # logto.utilities.test
 
-<a id="logto.Storage"></a>
+<a id="iden.Storage"></a>
 
 # logto.Storage
 
 Logto client storage abstract class and the default implementation.
 
-<a id="logto.Storage.PersistKey"></a>
+<a id="iden.Storage.PersistKey"></a>
 
 #### PersistKey
 
 The keys literal for the persistent storage.
 
-<a id="logto.Storage.Storage"></a>
+<a id="iden.Storage.Storage"></a>
 
 ## Storage
 
@@ -1019,7 +1019,7 @@ Usually this should be implemented as a persistent storage, such as a
 session or a database, since the page will be redirected to Logto and
 then back to the original page.
 
-<a id="logto.Storage.Storage.get"></a>
+<a id="iden.Storage.Storage.get"></a>
 
 #### get
 
@@ -1030,7 +1030,7 @@ def get(key: PersistKey) -> Optional[str]
 
 Get the stored string for the given key, return None if not found.
 
-<a id="logto.Storage.Storage.set"></a>
+<a id="iden.Storage.Storage.set"></a>
 
 #### set
 
@@ -1041,7 +1041,7 @@ def set(key: PersistKey, value: Optional[str]) -> None
 
 Set the stored value (string or None) for the given key.
 
-<a id="logto.Storage.MemoryStorage"></a>
+<a id="iden.Storage.MemoryStorage"></a>
 
 ## MemoryStorage
 
@@ -1054,4 +1054,3 @@ only be used for testing, since the data will be lost after the page is
 redirected.
 
 See `Storage` for the interface.
-

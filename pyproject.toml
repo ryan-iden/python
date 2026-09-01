@@ -1,9 +1,9 @@
 [project]
-name = "logto"
-version = "0.2.1"
-description = "Logto Python SDK."
+name = "iden-sdk"
+version = "0.0.1"
+description = "iden Python SDK."
 authors = [
-    {name = "Silverhand Inc.", email = "contact@silverhand.io"},
+    {name = "ryan-iden", email = "wangsiyuan19990317@gmail.com"},
 ]
 dependencies = [
     "aiohttp<4.0.0,>=3.8.5",
@@ -13,12 +13,12 @@ dependencies = [
 requires-python = "<4.0,>=3.8"
 readme = "README.md"
 license = {text = "MIT"}
-keywords = ["logto", "auth", "user", "authentication", "authorization"]
+keywords = ["iden", "auth", "user", "authentication", "authorization"]
 
 [project.urls]
-homepage = "https://logto.io/"
-repository = "https://github.com/logto-io/python"
-documentation = "https://github.com/logto-io/python/tree/master/docs"
+homepage = "https://github.com/ryan-iden/python"
+repository = "https://github.com/ryan-iden/python"
+documentation = "https://github.com/ryan-iden/python/tree/ryan-wong-coder-personal/docs"
 
 [build-system]
 requires = ["pdm-backend"]
@@ -27,7 +27,7 @@ build-backend = "pdm.backend"
 [tool.coverage.run]
 branch = true
 omit = ["*_test.py"]
-source = ["logto"]
+source = ["iden"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
@@ -43,7 +43,7 @@ type = "markdown"
 descriptive_class_title = false
 render_toc = true
 toc_maxdepth = 1
-render_toc_title = "Logto Python SDK API reference"
+render_toc_title = "iden Python SDK API reference"
 
 [[tool.pydoc-markdown.processors]]
 type = "filter"

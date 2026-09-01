@@ -40,7 +40,8 @@ class OidcCore:
         """
         self.metadata = metadata
         self.jwksClient = PyJWKClient(
-            metadata.jwks_uri, headers={"user-agent": "@logto/python", "accept": "*/*"}
+            metadata.jwks_uri,
+            headers={"user-agent": "@ryan-iden/python", "accept": "*/*"},
         )
 
     @staticmethod

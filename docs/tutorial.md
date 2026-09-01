@@ -28,7 +28,7 @@ This tutorial will show you how to integrate Logto into your Python web applicat
 
 ## Installation
 ```bash
-pip install logto # or `poetry add logto` or whatever you use
+pip install iden-sdk # or `poetry add iden-sdk` or whatever you use
 ```
 
 ## Integration
@@ -36,7 +36,7 @@ pip install logto # or `poetry add logto` or whatever you use
 ### Init LogtoClient
 
 ```python
-from logto import LogtoClient, LogtoConfig
+from iden import LogtoClient, LogtoConfig
 
 client = LogtoClient(
     LogtoConfig(
@@ -50,7 +50,7 @@ client = LogtoClient(
 Also replace the default memory storage with a persistent storage, for example:
 
 ```python
-from logto import LogtoClient, LogtoConfig, Storage
+from iden import LogtoClient, LogtoConfig, Storage
 from flask import session
 from typing import Union
 
@@ -70,7 +70,7 @@ client = LogtoClient(
 )
 ```
 
-See [Storage](./api.md#logto.Storage.Storage) for more details.
+See [Storage](./api.md#iden.Storage.Storage) for more details.
 
 
 ### Implement the sign-in route
@@ -231,7 +231,7 @@ client = LogtoClient(
 > **Note**
 > For now, there's no way to remove the default scopes without mutating the `scopes` list.
 
-See [UserInfoScope](./api.md#logto.models.oidc.UserInfoScope) for a list of supported scopes and its mapped claims.
+See [UserInfoScope](./api.md#iden.models.oidc.UserInfoScope) for a list of supported scopes and its mapped claims.
 
 ### Special ID token claims
 
@@ -241,7 +241,7 @@ Considering performance and the data size, Logto doesn't include all the claims 
 (await client.fetchUserInfo()).custom_data # Get the custom_data claim
 ```
 
-See [UserInfoScope](./api.md#logto.models.oidc.UserInfoScope) for details.
+See [UserInfoScope](./api.md#iden.models.oidc.UserInfoScope) for details.
 
 ## API resources
 
@@ -316,7 +316,7 @@ If organization is new to you, please read [🏢 Organizations (Multi-tenancy)](
 You need to add `UserInfoScope.organizations` scope when configuring the Logto client:
 
 ```python
-from logto import LogtoClient, LogtoConfig, UserInfoScope
+from iden import LogtoClient, LogtoConfig, UserInfoScope
 
 client = LogtoClient(
     LogtoConfig(

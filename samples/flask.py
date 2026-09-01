@@ -1,8 +1,8 @@
 from dotenv import load_dotenv
 from flask import Flask, g, jsonify, redirect, request
 
-from logto import LogtoException
-from logto.models.oidc import FirstScreen, Identifier
+from iden import LogtoException
+from iden.models.oidc import FirstScreen, Identifier
 from samples.authenticated import authenticated
 from samples.client import client
 from samples.config import (

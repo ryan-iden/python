@@ -56,13 +56,13 @@ class TestLogtoClient:
         mocker: MockerFixture,
     ) -> LogtoClient:
         mocker.patch(
-            "logto.OidcCore.OidcCore.generateCodeVerifier", return_value="codeVerifier"
+            "iden.OidcCore.OidcCore.generateCodeVerifier", return_value="codeVerifier"
         )
         mocker.patch(
-            "logto.OidcCore.OidcCore.generateCodeChallenge",
+            "iden.OidcCore.OidcCore.generateCodeChallenge",
             return_value="codeChallenge",
         )
-        mocker.patch("logto.OidcCore.OidcCore.generateState", return_value="state")
+        mocker.patch("iden.OidcCore.OidcCore.generateState", return_value="state")
         mockRequest(json=mockProviderMetadata.__dict__)
         return LogtoClient(config, storage)
 
@@ -305,7 +305,7 @@ class TestLogtoClient:
         mockRequest(method="post", json=tokenResponse.__dict__)
 
         # Mock verifyIdToken()
-        mocker.patch("logto.OidcCore.OidcCore.verifyIdToken", return_value=None)
+        mocker.patch("iden.OidcCore.OidcCore.verifyIdToken", return_value=None)
 
         # Should not raise
         await client.handleSignInCallback(
@@ -476,7 +476,7 @@ class TestLogtoClient:
 
         client.getAccessToken = mocker.AsyncMock(return_value="accessToken")
         mocker.patch(
-            "logto.OidcCore.OidcCore.fetchUserInfo",
+            "iden.OidcCore.OidcCore.fetchUserInfo",
             side_effect=mockFetchUserInfo,
         )
 

@@ -2,7 +2,7 @@ name: Main
 
 on:
   push:
-    branches: [master]
+    branches: [master, ryan-wong-coder-personal]
   pull_request:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - uses: pdm-project/setup-pdm@v4
         with:
@@ -26,7 +26,7 @@ jobs:
           pdm install
 
       - name: Check format
-        run: pdm run black logto samples --check
+        run: pdm run black iden samples --check
 
       - name: Build
         run: pdm build
